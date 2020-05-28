@@ -15,7 +15,7 @@ app.use(cors());
 const billsRoute = require("./routes/bills"); // This would pull the routes from the posts.js onto app.js and store it in a constant
 //Middleware
 app.use("/.netlify/functions/bills", billsRoute); //This would tell app.js that whenever the API call for posts would happen, then call the constant that save the other file
-exports.handler = serverless(app);
+exports.handler = serverless(router);
 //Route
 
 app.get("/", (req, res) => {
